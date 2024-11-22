@@ -374,9 +374,8 @@ class AdvancedHealthTracker:
         print(message)
 
         if success:
-            
+            terminate = input("Registration complete. Do you want to login now? (y/n): ").lower()
             if not is_doctor and terminate == 'y':
-                terminate = input("Registration complete. Do you want to login now? (y/n): ").lower()
                 time.sleep(1)
                 self.show_home_menu()
             else:
