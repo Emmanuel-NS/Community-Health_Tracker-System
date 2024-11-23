@@ -97,6 +97,7 @@ class AdvancedHealthTracker:
                 "Eat protein-rich foods with each meal.",
                 "Practice mindful eating.",
                 "Plan your meals ahead."
+                "Include healthy fats in your diet, such as those from avocados, nuts, seeds, and olive oil."
             ],
             "exercise": [
                 "Aim for 30 minutes of moderate exercise daily.",
