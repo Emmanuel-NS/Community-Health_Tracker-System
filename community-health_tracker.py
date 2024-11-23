@@ -23,7 +23,7 @@ def clear_screen():
 
 class AdvancedHealthTracker:
     def __init__(self):
-        """Initialize the tracker with necessary database connection."""
+        # Initialize the tracker with necessary database connection.
         self.db_connection = get_db_connection()
         self.cursor = self.db_connection.cursor()
         self.username = None
