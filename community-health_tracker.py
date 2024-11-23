@@ -81,7 +81,7 @@ class AdvancedHealthTracker:
 
 
     def initialize_health_tips(self):
-        """Initialize health tips database."""
+        # Initialize health tips database.
         self.health_tips = {
             "general": [
                 "Stay hydrated by drinking at least 8 glasses of water daily.",
