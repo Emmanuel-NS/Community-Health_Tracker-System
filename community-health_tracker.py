@@ -33,7 +33,7 @@ class AdvancedHealthTracker:
         
     
     def display_welcome_message(self):
-        """Display an enhanced interactive welcome message."""
+        # Display an enhanced interactive welcome message.
         clear_screen()
         
         print("\n" + "═" * 70)
