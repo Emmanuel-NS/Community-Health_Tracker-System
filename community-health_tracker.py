@@ -124,7 +124,7 @@ class AdvancedHealthTracker:
         }
 
     def get_health_tips(self, category="general", user_metrics=None):
-        """Get health tips by category, optionally based on user health metrics."""
+      # Get health tips by category, optionally based on user health metrics.
         if user_metrics:
             # Provide tips based on the user's health metrics
             if 'weight' in user_metrics:
