@@ -124,7 +124,7 @@ class AdvancedHealthTracker:
         }
 
     def get_health_tips(self, category="general", user_metrics=None):
-      ''' Get health tips by category, optionally based on your health metrics.'''
+      """ Get health tips by category, optionally based on your health metrics."""
         if user_metrics:
             # Provide tips based on the user's health metrics
             if 'weight' in user_metrics:
@@ -280,7 +280,7 @@ class AdvancedHealthTracker:
         self.show_home_menu()
     
     def validate_password(self, password):
-        """Ensure the password is strong."""
+        """We have to ensure that the password is strong."""
         if len(password) < 8:
             return False, "Password must be at least 8 characters long!"
         if not re.search(r"\d", password):
