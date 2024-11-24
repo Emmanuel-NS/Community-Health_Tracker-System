@@ -130,7 +130,7 @@ class AdvancedHealthTracker:
 
     def get_health_tips(self, category="general", user_metrics=None):
       """ Get health tips by category, optionally based on your health metrics."""
-        if user_metrics:
+        if user_metrics:  # If specific metrics are provided(Return relevant metric-based tips)
             # Provide tips based on the user's health metrics
             if 'weight' in user_metrics:
                 return self.health_tips["metrics"]["weight"]
@@ -140,7 +140,7 @@ class AdvancedHealthTracker:
                 return self.health_tips["metrics"]["steps"]
         
         # Default that general health tips if no metrics are available
-        return self.health_tips.get(category, self.health_tips["general"])
+        return self.health_tips.get(category, self.health_tips["general"])  # Return general category tips if no specific metrics
 
     def show_tips(self, tips):
         """Display the health tips."""
