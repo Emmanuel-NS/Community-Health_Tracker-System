@@ -257,6 +257,7 @@ class AdvancedHealthTracker:
             return [],[], "User not found!"
         
         user_id = user[0]
+        # Retrieve health data ordered by date
         self.cursor.execute(
             "SELECT date_logged, weight, blood_pressure, steps FROM health_data WHERE user_id = %s ORDER BY date_logged DESC",
             (user_id,)
@@ -265,7 +266,7 @@ class AdvancedHealthTracker:
         if not health_data:
             return [],[], "No health history found!"
         
-        # Prepare data for tabulation
+        # Prepare data for tabulation (table display)
         table_data = []
         for data in health_data:
             table_data.append([
