@@ -34,12 +34,15 @@ class AdvancedHealthTracker:
     
     def display_welcome_message(self):
         # Display an enhanced interactive welcome message.
-        clear_screen()
-        
+        clear_screen()  # Clear terminal for clean display
+
+        # Decorative header
         print("\n" + "═" * 70)
         print("║" + " " * 20 + "COMMUNITY HEALTH TRACKER" + " " * 20 + "║")
         print("═" * 70 + "\n")
-        
+
+
+        # Welcome messages and features list
         welcome_messages = [
                 "🌟 Welcome to Your Personal Health Management System! 🌟",
                 "\nAbout Our Application:",
@@ -64,19 +67,21 @@ class AdvancedHealthTracker:
                 "   • Contact a Doctor"
             ]
 
-        
+
+        # Displaying welcome message with typing effects
         for message in welcome_messages:
-            if keyboard.is_pressed("enter"):
+            if keyboard.is_pressed("enter"): # Allow skipping animation
                 break
-            self.print_slowly(message, 0.03)
-        
+            self.print_slowly(message, 0.03)  # Show message with typing effect
+
+        # Show loading animation
         print("\nLoading your health companion", end='')
         for _ in range(3):
             time.sleep(0.5)
             print(".", end='', flush=True)
         print("\n")
         
-        input("Press Enter to begin your health journey...")
+        input("Press Enter to begin your health journey...") # Wait for user input
         clear_screen()
 
 
