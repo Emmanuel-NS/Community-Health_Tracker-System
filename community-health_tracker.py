@@ -24,12 +24,12 @@ def clear_screen():
 class AdvancedHealthTracker:
     def __init__(self):
         # Initialize the tracker with necessary database connection.
-        self.db_connection = get_db_connection()
-        self.cursor = self.db_connection.cursor()
-        self.username = None
-        self.display_welcome_message()
-        self.initialize_health_tips()
-        self.login_attempts=0
+        self.db_connection = get_db_connection()  # Establish database connection
+        self.cursor = self.db_connection.cursor()  # Create database cursor for operations
+        self.username = None  # Store current user's username
+        self.display_welcome_message()  # Show welcome screen
+        self.initialize_health_tips()  # Set up health tips database
+        self.login_attempts=0   # Track failed login attempts
         
     
     def display_welcome_message(self):
