@@ -134,7 +134,7 @@ class AdvancedHealthTracker:
             if 'steps' in user_metrics:
                 return self.health_tips["metrics"]["steps"]
         
-        # Default to general health tips if no metrics are available
+        # Default that general health tips if no metrics are available
         return self.health_tips.get(category, self.health_tips["general"])
 
     def show_tips(self, tips):
