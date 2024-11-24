@@ -88,14 +88,14 @@ class AdvancedHealthTracker:
     def initialize_health_tips(self):
         # Initialize health tips database.
         self.health_tips = {
-            "general": [
+            "general": [  # General health advice
                 "Stay hydrated by drinking at least 8 glasses of water daily.",
                 "Aim for 7-9 hours of sleep each night.",
                 "Practice good posture throughout the day.",
                 "Take regular breaks from screen time.",
                 "Stay socially connected with friends and family."
             ],
-            "nutrition": [
+            "nutrition": [  # Nutrition specific advice
                 "Include a variety of fruits and vegetables in your diet.",
                 "Choose whole grains over refined grains.",
                 "Limit processed foods and added sugars.",
@@ -104,7 +104,7 @@ class AdvancedHealthTracker:
                 "Plan your meals ahead."
                 "Include healthy fats in your diet, such as those from avocados, nuts, seeds, and olive oil."
             ],
-            "exercise": [
+            "exercise": [  # Exercise-related tips
                 "Aim for 30 minutes of moderate exercise daily.",
                 "Include both cardio and strength training.",
                 "Take regular walking breaks.",
@@ -112,16 +112,16 @@ class AdvancedHealthTracker:
                 "Start with gentle exercises if you're new to working out.",
                 "Remember to stretch before and after exercise."
             ],
-            "metrics": {
-                "weight": [
+            "metrics": {  # Metric-specific health advice
+                "weight": [  # Weight-related tips
                     "Maintain a healthy weight by balancing your calorie intake and expenditure.",
                     "If you're overweight, aim for gradual weight loss with a balanced diet and exercise."
                 ],
-                "blood_pressure": [
+                "blood_pressure": [  # Blood pressure tips
                     "Monitor your blood pressure regularly and aim for a healthy range.",
                     "If you have high blood pressure, reduce salt intake and stay physically active."
                 ],
-                "steps": [
+                "steps": [  # step count tips
                     "Aim for at least 10,000 steps daily to maintain a healthy lifestyle.",
                     "Take breaks during long periods of sitting to improve circulation."
                 ]
