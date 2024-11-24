@@ -139,4 +139,4 @@ The application includes comprehensive error handling for:
 
 Feel free to fork this project and submit pull requests for any improvements you make.
 
-
+Uniqueness: Direct doctor-patient connection capability, multiple specialities support and advisory system (multi-category health tips)
