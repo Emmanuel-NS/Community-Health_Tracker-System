@@ -11,10 +11,10 @@ import keyboard  # For keyboard input detection
 # MySQL Database connection setup
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root", 
-        password="",  
-        database="health_tracker"
+        host="localhost",  # Database server location
+        user="root",  # Database username
+        password="",  # Database password (empty in this case)
+        database="health_tracker"  # Name of the database to connect to
     )
 
 def clear_screen():
