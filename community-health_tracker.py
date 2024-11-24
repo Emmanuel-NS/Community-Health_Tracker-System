@@ -1,12 +1,12 @@
-import os
-import mysql.connector
-import time
-from datetime import datetime
-import getpass
-from tabulate import tabulate
-import re
-from hashlib import sha256
-import keyboard
+import os  # For operating system operations like clearing screen
+import mysql.connector  # For MySQL database connectivity
+import time  # For adding delays and timing operations
+from datetime import datetime  # For handling date and time operations
+import getpass  # For secure password input without displaying characters
+from tabulate import tabulate  # For creating formatted tables in console
+import re  # For regular expression operations (password validation)
+from hashlib import sha256  # For password hashing
+import keyboard  # For keyboard input detection
 
 # MySQL Database connection setup
 def get_db_connection():
