@@ -309,7 +309,8 @@ class AdvancedHealthTracker:
         user = self.cursor.fetchone()
         if not user:
             return False, "Username not found!, try again!..."
-        
+
+        # Verify password
         stored_password = user[0]
         if sha256(password.encode()).hexdigest() != stored_password:
             return False, "Incorrect password!, try again!..."
@@ -320,7 +321,7 @@ class AdvancedHealthTracker:
     def login(self):
         """Log in an existing user."""
         username = input("Enter your username: ")
-        password = getpass.getpass("Enter your password: ")
+        password = getpass.getpass("Enter your password: ")  # Hide password input
         success, message = self.login_user(username, password)
         
         print(message)
@@ -328,7 +329,7 @@ class AdvancedHealthTracker:
         if success:
             self.show_home_menu()
         else:
-            if self.login_attempts < 2:
+            if self.login_attempts < 2:  # Allow 3 attempts total
                 print()
                 print(f"try again!!, you still have {3-(self.login_attempts + 1)} attempts:")
                 self.login_attempts = self.login_attempts + 1
