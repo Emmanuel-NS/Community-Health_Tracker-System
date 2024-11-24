@@ -232,6 +232,7 @@ class AdvancedHealthTracker:
         blood_pressure = input("Enter your blood pressure (e.g., 120/80): ")
         steps = input("Enter the number of steps you took today: ")
 
+        # Try to log the metrics
         success, message = self.log_health_metrics(weight, blood_pressure, steps)
         print(message)
         time.sleep(2)
@@ -249,6 +250,7 @@ class AdvancedHealthTracker:
 
     def display_health_history(self):
         """Display user's health history from the database in a tabular format."""
+        # Get user ID
         self.cursor.execute("SELECT id FROM users WHERE username = %s", (self.username,))
         user = self.cursor.fetchone()
         if not user:
