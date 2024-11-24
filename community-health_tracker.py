@@ -19,7 +19,7 @@ def get_db_connection():
 
 def clear_screen():
     # Clear the terminal screen.
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear')  # Use 'cls' for Windows, 'clear' for Unix/Linux
 
 class AdvancedHealthTracker:
     def __init__(self):
