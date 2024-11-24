@@ -145,15 +145,16 @@ class AdvancedHealthTracker:
     def show_tips(self, tips):
         """Display the health tips."""
         print()
-        for tip in tips:
+        for tip in tips:  # Display tip with bullet point
             print(f"* {tip}")
             
-        input("\nPress Enter to continue...")
-        self.show_health_tips_menu()
+        input("\nPress Enter to continue...")  # Wait for user acknowledgment
+        self.show_health_tips_menu()  # Return health tips menu
 
     def show_health_tips_menu(self):
         """Show health tips menu."""
         clear_screen()
+        # Display menu options
         print("Health Tips Menu:")
         print("1. General Tips")
         print("2. Nutrition Tips")
@@ -161,6 +162,7 @@ class AdvancedHealthTracker:
         print("4. Back to Home")  # User can go back to home menu
         choice = input("Select an option: ")
 
+        # Handle user choice
         if choice == '1':
             tips = self.get_health_tips("general")
             self.show_tips(tips)
@@ -182,7 +184,7 @@ class AdvancedHealthTracker:
     def print_slowly(self, text, delay=0.05):
         """Print text with a typing effect."""
         for char in text:
-            if keyboard.is_pressed("enter"):
+            if keyboard.is_pressed("enter"):  # Allow skipping
                 break
             print(char, end='', flush=True)
             time.sleep(delay)
@@ -191,24 +193,28 @@ class AdvancedHealthTracker:
     def log_health_metrics(self, weight, blood_pressure, steps):
         """Log user's health metrics in the MySQL database."""
         try:
+            # Convert and validate inputs
             weight = float(weight)
             steps = int(steps)
             
             # Validate blood pressure format
             if not blood_pressure.count('/') == 1:
                 return False, "Blood pressure must be in format '120/80'"
-            
+
+            # Parse and validate blood pressure values
             sys_bp, dia_bp = map(int, blood_pressure.split('/'))
             if not (60 <= sys_bp <= 200 and 40 <= dia_bp <= 130):
                 return False, "Blood pressure values are out of normal range"
-            
+
+            # Get user ID
             self.cursor.execute("SELECT id FROM users WHERE username = %s", (self.username,))
             user = self.cursor.fetchone()
             if not user:
                 return False, "User not found!"
             
             user_id = user[0]
-            
+
+            # Insert health metrics into database
             self.cursor.execute(
                 "INSERT INTO health_data (user_id, weight, blood_pressure, steps) VALUES (%s, %s, %s, %s)",
                 (user_id, weight, blood_pressure, steps)
